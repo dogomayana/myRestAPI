@@ -1,0 +1,70 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       Int     @default(autoincrement())
+  name     String
+  phone    String  @unique
+  role     String?
+  password String
+  email    String  @unique
+}
+
+model Student {
+  studentId        Int                @id @default(autoincrement())
+  lName            String
+  fName            String
+  oName            String
+  gender           String
+  dob              String
+  email            String             @unique
+  phoneNum         String             @unique
+  registered       DateTime           @default(now())
+  points           Int                @default(0)
+  paid             Boolean            @default(true)
+  answeredExercise AnsweredExercise[]
+}
+
+model AnsweredExercise {
+  id           Int      @id @default(autoincrement())
+  answeredDate DateTime @default(now())
+  title        String
+  answer       String
+  student      Student  @relation(fields: [studentId], references: [studentId])
+  studentId    Int
+}
+
+model Course {
+  id            Int      @id @default(autoincrement())
+  overview      String
+  courseTitle   String
+  creatorName   String?
+  subjectName   String
+  courseExcerpt String
+  courseSlug    String   @unique
+  coursePics    String?
+  lessons       Lesson[]
+  createdAt     DateTime @default(now())
+}
+
+model Lesson {
+  id            Int      @id @default(autoincrement())
+  lessonTitle   String
+  lessonContent String
+  lessonPics    String?
+  lessonExcerpt String
+  creatorName   String?
+  lessonSlug    String?  @unique
+  createdAt     DateTime @default(now())
+  courseId      Int
+  course        Course   @relation(fields: [courseId], references: [id])
+}

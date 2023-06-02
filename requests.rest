@@ -1,0 +1,112 @@
+# POST http://localhost:2025/api/v1/auth/signUp
+# Content-Type: application/json
+
+# {
+#     "name":"Thomas Stephen",
+#     "email":"thomasstephen252@gmail.com",
+#     "phone":"08106264634",
+#     "password":"123456"
+# }
+
+# GET http://localhost:2025/api/v1/auth/getUsers
+# Content-Type: application/json
+
+# GET http://localhost:2025/api/v1/auth/searchUser?searchQuery=thomas
+# Content-Type: application/json
+
+# DELETE  http://localhost:2025/api/v1/auth/deleteAllUsers
+# Content-Type: application/json
+
+# Student Login
+# POST  http://localhost:2025/api/v1/auth/logIn
+# Content-Type: application/json
+
+# {
+#     "identifier":"thomastephen252@gmail.com",
+#     "password":"123456"
+# }
+
+# Admin Login
+# POST  http://localhost:2025/api/v1/auth/logIn
+# Content-Type: application/json
+
+# {
+#     "identifier":"thomasstephen252@gmail.com",
+#     "password":"123456"
+# }
+
+# POST  http://localhost:2025/api/v1/students/addStudent
+# Content-Type: application/json
+
+# {
+#     "fName":"Essien",
+#         "oName": "Inyang",
+#         "gender":"male",
+#         "dob":"17/05/2023",
+#         "email":"bryan@mail.com",
+#         "phoneNum":"1234567",
+#         "lName":"Bryan"
+# }
+
+# User role
+# GET      http://localhost:2025/api/v1/students/getAllStudents
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODQ2OTgzMjYsImV4cCI6MTY4NDc4NDcyNn0.Lhrxrodka-oYIaGtJdqqdIosb4OYaUKh8pcXmTTUml8
+# Content-Type: application/json
+
+
+# Admin Role
+# GET      http://localhost:2025/api/v1/students/getAllStudents
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzcsInJvbGUiOiJ0aG9tYXN0ZXBoZW4yNTJAZ21haWwuY29tIiwiaWF0IjoxNjg0NzAzNTc1LCJleHAiOjE2ODQ3ODk5NzV9.f5qx_IxWYJf8KTat8GFDHdK6Sp0hQi5h9VNG6dgycHs
+# Content-Type: application/json
+
+# GET       http://localhost:2025/api/v1/students/getAllStudents/123456
+# Content-Type: application/json
+
+# PUT        http://localhost:2025/api/v1/students/answeredExercise
+# Content-Type: application/json
+
+#   {
+#     "phoneNum":"123456",
+#   "title":"God Abeg",
+#   "answer":"Let us see how things work"
+# }
+
+
+# PUT       http://localhost:2025/api/v1/students/updatePaid/123456/paid
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzgsInJvbGUiOiJ0aG9tYXNzdGVwaGVuMjUyQGdtYWlsLmNvbSIsImlhdCI6MTY4NDcwNDM1NywiZXhwIjoxNjg0NzkwNzU3fQ.fnOGaBVlHK70ghO5nriiPwYnqJGFLk5TOAQuddk6cYA
+# Content-Type: application/json
+
+# {
+# "paid":false
+# }
+
+# POST        http://localhost:2025/api/v1/courses/addCourse
+# Content-Type: application/json
+
+# {
+#   "overview":"This is an overview of the course",
+#   "title":"Numeration",
+#   "courseSlug":"numeration-course",
+#   "coursePics":"random link"
+# }
+
+# GET         http://localhost:2025/api/v1/courses/getAllCourses
+# Content-Type: application/json
+
+# GET         http://localhost:2025/api/v1/courses/getCourse/1
+# Content-Type: application/json
+
+# POST        http://localhost:2025/api/v1/courses/addLesson
+# Content-Type: application/json
+
+# {
+#   "courseSlug":"numeration-course",
+#   "title":"Indices",
+#         "content":"Indices a random concept topic",
+#         "lessonPics":"Random lesson pics",
+#         "lessonSlug":"indices"
+# }
+# DELETE          http://localhost:2025/api/v1/courses/deleteCourses
+# Content-Type: application/json
+# DELETE          http://localhost:2025/api/v1/auth/deleteAllUsers
+# Content-Type: application/json
