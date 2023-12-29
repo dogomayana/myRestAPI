@@ -1,0 +1,2 @@
+GET http://localhost:2025/getAllCustomersDetails
+Content-Type: application/json
