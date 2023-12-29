@@ -17,6 +17,7 @@ const router = express.Router();
 // router.get("/getAllStudents", authMiddleware, getAllStudents);
 router.get("/getAllStudents", getAllStudents);
 
+router.get("/getAllStudents", authMiddleware, getAllStudents);
 // router.get("/searchStudent", searchStudent);
 router.get("/getAllStudents/:phoneNum", authMiddleware, getStudent);
 router.post("/addStudent", authMiddleware, addStudent);
